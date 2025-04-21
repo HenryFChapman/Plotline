@@ -1,4 +1,4 @@
-# Topic Analysis Dashboard
+# Infegy Plotline
 
 A powerful web-based dashboard for analyzing and visualizing topic narratives and their relationships using the Infegy API.
 
