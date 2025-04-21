@@ -1,0 +1,14 @@
+# API Keys
+.env
+*.pem
+api_key
+api_key.txt
+config.ini
+secrets.json
+
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes 
