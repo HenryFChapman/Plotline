@@ -1751,7 +1751,7 @@
                     {label: 'Sentiment Score', value: `${(narrative.positivity * 100).toFixed(1)}%`, class: 'sentiment-stat'},
                     {label: 'Topic Distribution', value: `${(narrative.distribution * 100).toFixed(1)}%`, class: 'distribution-stat'},
                     {label: 'Total Posts', value: utils.formatNumber(totalPosts), class: 'volume-stat'},
-                    {label: 'Language', value: utils.getLanguageName(narrative.language), class: 'language-stat'}
+                    {label: 'Language', value: 'en', class: 'language-stat'}
                 ];
 
                 const statsDiv = utils.createElementWithClass('div', 'narrative-stats');

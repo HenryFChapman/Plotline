@@ -29,18 +29,19 @@ def request_summary():
             "values": [
                 {
                     "op": ">",
-                    "value": "-P90D",
+                    "value": "-P21D",
                     "field": "published"
                 },
                 {
                     "op": "contains",
-                    "fields": [
-                        "body", "title", "description"
-                    ],
-                    "values": [
-                        "Hermes"
-                    ]
+                    "field": "taxonomies",
+                    "value": "News and Politics"
                 },
+                {
+                    "op": "contains",
+                    "field": "language",
+                    "value": "en"
+                }
             ]
         }
     }
