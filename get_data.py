@@ -16,33 +16,26 @@ HEADERS = {
     "Content-Type": "application/json",
 }
 
+# Social Dataset ID:
+# dataset_id = "ds_gj4u3F40SLa"
+# LOTR: 
+dataset_id = "ds_RXhFoNlvDa6"
+
+# Trump YouTube Comments:
+dataset_id = "ds_EwswcM5Xzc2"
+
 TIMEOUT = 10 * 60  # 10 minutes in seconds
 WAIT_TIME = 10  # Polling wait time
-OUTPUT_FILE = "infegy_summary_3.json"
+OUTPUT_FILE = "JoeRogan.json"
 
 def request_summary():
     """Requests the main structured summary and retrieves the token."""
     url = f"{BASE_URL}/query/ai-summary-structured/"
     payload = {
+        "dataset_id": dataset_id,
         "query": {
             "op": "and",
-            "values": [
-                {
-                    "op": ">",
-                    "value": "-P21D",
-                    "field": "published"
-                },
-                {
-                    "op": "contains",
-                    "field": "taxonomies",
-                    "value": "News and Politics"
-                },
-                {
-                    "op": "contains",
-                    "field": "language",
-                    "value": "en"
-                }
-            ]
+            "values": []
         }
     }
 
@@ -166,7 +159,10 @@ def request_nested_narratives(query):
     """Requests nested narratives analysis for a specific narrative query."""
     url = f"{BASE_URL}/query/ai-summary-structured/"
     
-    payload = {"query": query}  # Use the narrative's existing query
+    payload = {
+        "query": query,
+        "dataset_id": dataset_id
+    }  # Use the narrative's existing query
     
     response = requests.post(url, json=payload, headers=HEADERS)
 

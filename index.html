@@ -730,6 +730,8 @@
             <select id="dataSelector" class="data-dropdown">
                 <option value="infegy_summary.json">News Analysis</option>
                 <option value="infegy_summary_2.json">Tesla Specific Analysis</option>
+                <option value="lotr.json">The Lord of the Rings</option>
+                <option value="JoeRogan.json">Joe Rogan - Trump Comments</option>
             </select>
         </div>
     </header>
@@ -811,11 +813,7 @@
                 <h2>Narrative Analysis</h2>
             </div>
         <div class="narrative-container" id="narratives"></div>
-            
-            <div class="section-header">
-                <h2>Key Findings</h2>
-            </div>
-            <div id="conclusion" class="highlight-text"></div>
+
         </div>
     </div>
 
@@ -1160,7 +1158,6 @@
                     { id: 'introduction', label: 'Introduction' },
                     { id: 'overview', label: 'Topic Distribution' },
                     { type: 'narratives', label: 'Narratives' },
-                    { id: 'conclusion', label: 'Key Findings' }
                 ];
 
                 const toc = document.getElementById('toc');
@@ -1301,7 +1298,8 @@
                         </div>
                         ${parseMarkdown(jsonData.output.introduction)}
                     `;
-                    document.getElementById("conclusion").innerHTML = parseMarkdown(jsonData.output.conclusion);
+                    
+                    //document.getElementById("conclusion").innerHTML = parseMarkdown(jsonData.output.conclusion);
 
                     // Sort narratives by distribution and limit to top 8
                     const sortedNarratives = jsonData.output.narratives
@@ -2013,9 +2011,19 @@
             }
 
             static createPersonas(narrative) {
+                // Check if personas exist and at least one of them has non-zero gender data
+                if (
+                    !narrative.personas ||
+                    !Array.isArray(narrative.personas) ||
+                    narrative.personas.length === 0 ||
+                    narrative.personas.every(p => p.title === "Error fetching personas" || (p.gender.m === 0 && p.gender.f === 0 && p.gender.n === 0))
+                ) {
+                    return null; // Don't return a section if data is missing or invalid
+                }
+
                 const container = document.createElement('div');
                 container.innerHTML = '<h3>Personas:</h3>';
-                
+
                 const ul = utils.createElementWithClass('ul', 'personas');
                 narrative.personas.slice(0, 10).forEach(persona => {
                     const li = document.createElement('li');
@@ -2033,6 +2041,7 @@
                 container.appendChild(ul);
                 return container;
             }
+
         }
 
         // Add this function before creating the circles
