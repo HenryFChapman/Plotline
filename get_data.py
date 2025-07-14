@@ -26,7 +26,7 @@ dataset_id = "ds_EwswcM5Xzc2"
 
 TIMEOUT = 10 * 60  # 10 minutes in seconds
 WAIT_TIME = 10  # Polling wait time
-OUTPUT_FILE = "JoeRogan.json"
+OUTPUT_FILE = "data/JoeRogan.json"
 
 def request_summary():
     """Requests the main structured summary and retrieves the token."""
