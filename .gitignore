@@ -5,6 +5,8 @@ api_key
 api_key.txt
 config.ini
 secrets.json
+*.txt
+*.csv
 
 # macOS system files
 .DS_Store

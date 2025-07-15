@@ -101,7 +101,7 @@
             color: white;
         }
         .personas li.unknown {
-            background: #aa77ff;
+            background: #C3C7CF;
             color: white;
         }
         #my_dataviz {
@@ -727,12 +727,7 @@
             <div class="product-name"> Infegy Plotline</div>
         </div>
         <div class="data-selector">
-            <select id="dataSelector" class="data-dropdown">
-                <option value="data/infegy_summary.json">News Analysis</option>
-                <option value="data/lotr.json">The Lord of the Rings</option>
-                <option value="data/JoeRogan.json">Joe Rogan - Trump Comments</option>
-                <option value="data/OnyxStorm.json">Onyx Storm Reviews</option>
-            </select>
+            <select id="dataSelector" class="data-dropdown"></select>
         </div>
     </header>
     
@@ -802,7 +797,7 @@
                             Female-Majority Group
                         </div>
                         <div class="legend-item">
-                            <span class="legend-color" style="background: #aa77ff"></span>
+                            <span class="legend-color" style="background: #C3C7CF"></span>
                             Balanced Gender
                         </div>
                     </div>
@@ -825,7 +820,8 @@
             teal: '#22dddd',
             red: '#ff3366',
             pink: '#ee44ee',
-            purple: '#aa77ff'  // Adding Infegy purple
+            purple: '#C3C7CF',  // Adding Infegy purple,
+            grey: '#C3C7CF'  // Adding Infegy grey
         };
 
         const CHART_CONFIG = {
@@ -1670,10 +1666,28 @@
 
         // Initialize the dropdown handler
         document.addEventListener('DOMContentLoaded', function() {
-            const dataSelector = document.getElementById('dataSelector');
+
+
+            fetch("data_manifest.json")
+              .then(response => response.json())
+              .then(data => {
+                // Prioritize News Summary.json
+                const preferredFile = "plotline_data/News Summary.json";
+                data.sort((a, b) => (a.file === preferredFile ? -1 : b.file === preferredFile ? 1 : 0));
+
+                const dropdown = document.getElementById("dataSelector");
+                data.forEach(item => {
+                  const option = document.createElement("option");
+                  option.value = item.file;
+                  option.textContent = item.label;
+                  dropdown.appendChild(option);
+                });
+              });
+
+            //const dataSelector = document.getElementById('dataSelector');
             
             // Load initial data
-            loadAndProcessData(dataSelector.value);
+            loadAndProcessData("plotline_data/News Summary.json");
             
             // Handle dropdown changes
             dataSelector.addEventListener('change', function() {
@@ -2016,7 +2030,7 @@
                     !narrative.personas ||
                     !Array.isArray(narrative.personas) ||
                     narrative.personas.length === 0 ||
-                    narrative.personas.every(p => p.title === "Error fetching personas" || (p.gender.m === 0 && p.gender.f === 0 && p.gender.n === 0))
+                    narrative.personas.every(p => p.title === "Error fetching personas")
                 ) {
                     return null; // Don't return a section if data is missing or invalid
                 }
