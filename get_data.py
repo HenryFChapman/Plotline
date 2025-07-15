@@ -2,6 +2,7 @@ import time
 import json
 import requests
 from get_volume_data import get_volume_data
+
 # Constants
 BASE_URL = "https://starscape.infegy.com/api"
 
@@ -24,9 +25,12 @@ dataset_id = "ds_RXhFoNlvDa6"
 # Trump YouTube Comments:
 dataset_id = "ds_EwswcM5Xzc2"
 
+# Onyx Storm Dataset
+dataset_id = "ds_HlWb41bWOAc"
+
 TIMEOUT = 10 * 60  # 10 minutes in seconds
 WAIT_TIME = 10  # Polling wait time
-OUTPUT_FILE = "data/JoeRogan.json"
+OUTPUT_FILE = "data/OnyxStorm.json"
 
 def request_summary():
     """Requests the main structured summary and retrieves the token."""
@@ -68,7 +72,9 @@ def poll_async_results(token):
                 print(f"Error: AI failed to generate valid output for token {token}")
                 return {"error": "AI failed"}  # Return error marker instead of crashing
 
-            if data.get("complete") == True:
+            narratives = data.get("narratives") or []
+
+            if data.get("complete") is True or len(narratives) >= 6:
                 print("Data retrieval completed successfully.")
                 return data  
 
