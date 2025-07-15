@@ -14,3 +14,7 @@ secrets.json
 ._*
 .Spotlight-V100
 .Trashes 
+
+# Python Files
+__pycache__/
+*.py[cod]
