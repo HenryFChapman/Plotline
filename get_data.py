@@ -262,50 +262,56 @@ def generate_manifest():
     with open("data_manifest.json", "w") as f:
         json.dump(manifest, f, indent=4)
 
-def main():
-    
-    dataset_name = "MKBHD Comments"
-    
-    print("Uploading Data...")
-    push_data(dataset_name)
-    print("Finished Uploading Data.")
-
-    dataset_id = get_starscape_dataset_id()
-    print("Infegy Dataset ID: ", dataset_id)
-
-    # Step 1: Get the main summary
-    token, summary_data = request_summary(dataset_id)
-    result_data = poll_async_results(token)
-
-    # Step 2: Extract narratives
-    narratives = result_data.get("output", {}).get("narratives", [])[:NUM_NARRATIVES]
-
-    try:
-        if narratives:
-            # Step 3: Enrich with nested narratives
-            print("\nEnriching narratives with nested data...")
-            enriched_with_nested = enrich_narratives_with_nested_data(narratives, dataset_id)
-            
-            # Step 4: Enrich with personas
-            print("\nEnriching narratives with personas data...")
-            fully_enriched_narratives = enrich_narratives_with_personas(enriched_with_nested)
-            
-            result_data["output"]["narratives"] = fully_enriched_narratives
-
-        # Step 5: Add overall sentiment, total count, and timestamps to JSON
-        result_data["output"]["total_count"] = summary_data.get("total_count")
-        result_data["output"]["positivity"] = summary_data.get("positivity")
-        result_data["output"]["min_timestamp"] = summary_data.get("min_timestamp")
-        result_data["output"]["max_timestamp"] = summary_data.get("max_timestamp")
-
-        # Step 6: Save final JSON
-        save_result(result_data, dataset_name)
-        print("\nSuccessfully saved enriched data to JSON file")
-
-    except Exception as e:
-        print(f"Error: {e}")
-
-    generate_manifest()
 
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Run Infegy Starscape analysis.")
+    parser.add_argument("--dataset_id", type=str, help="Dataset ID to analyze (optional)")
+    parser.add_argument("--dataset_name", type=str, required=True, help="Name of dataset (used for push/save)")
+
+    args = parser.parse_args()
+    
+    dataset_id = args.dataset_id  # May be None
+    dataset_name = args.dataset_name
+
+    def run(dataset_id, dataset_name):
+        print("Uploading Data...")
+        push_data(dataset_name)
+        print("Finished Uploading Data.")
+
+        if not dataset_id:
+            dataset_id = get_starscape_dataset_id()
+        print("Infegy Dataset ID: ", dataset_id)
+
+        # Step 1: Get the main summary
+        token, summary_data = request_summary(dataset_id)
+        result_data = poll_async_results(token)
+
+        # Step 2: Extract narratives
+        narratives = result_data.get("output", {}).get("narratives", [])[:NUM_NARRATIVES]
+
+        try:
+            if narratives:
+                print("\nEnriching narratives with nested data...")
+                enriched_with_nested = enrich_narratives_with_nested_data(narratives, dataset_id)
+
+                print("\nEnriching narratives with personas data...")
+                fully_enriched_narratives = enrich_narratives_with_personas(enriched_with_nested)
+
+                result_data["output"]["narratives"] = fully_enriched_narratives
+
+            result_data["output"]["total_count"] = summary_data.get("total_count")
+            result_data["output"]["positivity"] = summary_data.get("positivity")
+            result_data["output"]["min_timestamp"] = summary_data.get("min_timestamp")
+            result_data["output"]["max_timestamp"] = summary_data.get("max_timestamp")
+
+            save_result(result_data, dataset_name)
+            print("\nSuccessfully saved enriched data to JSON file")
+
+        except Exception as e:
+            print(f"Error: {e}")
+
+        generate_manifest()
+
+    run(dataset_id, dataset_name)
