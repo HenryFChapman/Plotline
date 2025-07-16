@@ -8,6 +8,10 @@ secrets.json
 *.txt
 *.csv
 
+Sample_Initial_Output.json
+Sample_Output.json
+
+
 # macOS system files
 .DS_Store
 .DS_Store?
