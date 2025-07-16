@@ -36,7 +36,7 @@ This research combines several innovative techniques:
 
 **Experience the tool in action**: [https://henryfchapman.github.io/Plotline/](https://henryfchapman.github.io/Plotline/)
 
-The live demo showcases Tesla-related discourse analysis, demonstrating how the tool reveals hidden narrative patterns and trend evolution.
+The live demo showcases news-related discourse analysis, demonstrating how the tool reveals hidden narrative patterns and trend evolution.
 
 ##  Technical Stack
 
@@ -52,8 +52,6 @@ The live demo showcases Tesla-related discourse analysis, demonstrating how the 
 ## Sample Datasets
 
 The tool includes analysis of various social conversations:
-- **Tesla and Electric Vehicle Discourse**: Automotive industry conversations
-- **Entertainment and Media Discussions**: Content analysis and audience reactions
 - **Technology and Innovation Conversations**: Tech industry trends and sentiment
 - **Social Media Commentary Analysis**: Platform-specific conversation patterns
 - **Literature and Book Reviews**: Goodreads data analysis
