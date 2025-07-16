@@ -1,236 +1,216 @@
+Here’s a revised version of your README that tones down the hyperbole while maintaining clarity, professionalism, and enthusiasm. The language is more measured and neutral, suitable for a research-oriented or technical audience:
+
+---
+
 # Plotline: AI-Powered Narrative Analysis Dashboard
 
-> **Experimental Research Project** - Unraveling Tomorrow: How AI Traces the Plotlines of Emerging Trends
-
-A cutting-edge web-based dashboard for analyzing and visualizing complex social narratives using AI-driven nested topic analysis. This experimental tool transforms how researchers understand trend evolution by revealing the hidden architecture of social conversations through hierarchical topic modeling and interactive visualizations.
+A web-based dashboard for analyzing and visualizing social narratives using AI-assisted hierarchical topic modeling. This tool is designed to support researchers in identifying and exploring patterns in social conversation data through structured visualizations and interactive analysis.
 
 ## Research Focus
 
-**AI-Based Trend Identification and Explanation Through Nested Advanced Topic Analysis**
+**AI-Assisted Trend Analysis via Hierarchical Topic Modeling**
 
-This project explores how hierarchical topic modeling and interactive visualization can reveal patterns in social discourse that traditional linear analysis methods miss. By employing nested circle-packing algorithms and real-time sentiment analysis, Plotline enables researchers to explore social conversations at multiple levels simultaneously.
+This project investigates how layered topic modeling and interactive visualization can help identify structure and evolution in social discourse. By combining nested visual representations and sentiment analysis, Plotline enables multi-level exploration of complex narrative data.
 
 ## Key Features
 
-- **Nested Topic Visualization**: Interactive circle-packing diagrams showing hierarchical topic relationships
-- **Real-time Sentiment Analysis**: Dynamic sentiment mapping across topic clusters
-- **Demographic Persona Mapping**: Gender and demographic breakdowns within topics
-- **Narrative Evolution Tracking**: Temporal analysis of how topics develop and relate
-- **Interactive Exploration**: Seamless navigation from macro trends to granular insights
-- **API Integration**: Direct connection to Infegy Starscape API for live data
-- **Multi-Dataset Support**: Analysis of various social conversation datasets
-- **Real-time Data Processing**: Live topic extraction and sentiment analysis
+* **Hierarchical Topic Visualization**: Interactive circle-packing diagrams showing topic relationships
+* **Sentiment Mapping**: Visual sentiment trends across clusters
+* **Demographic Insights**: Gender and demographic breakdowns within topics
+* **Narrative Tracking**: Temporal analysis of topic development
+* **Interactive Exploration**: Navigate between broad trends and detailed insights
+* **API Integration**: Connects to Infegy Starscape for live data
+* **Multiple Dataset Support**: Works across diverse sources
+* **Live Data Processing**: On-the-fly topic and sentiment extraction
 
-## Experimental Methodology
+## Methodology Overview
 
-This research combines several innovative techniques:
+Plotline integrates several techniques:
 
-1. **Hierarchical AI-Driven Topic Clustering**: Advanced topic modeling that preserves narrative relationships
-2. **Nested Circle-Packing Algorithms**: Visual representation of complex topic hierarchies
-3. **Real-time Topic Extraction**: Live processing of social conversation data
-4. **Multi-level Sentiment Analysis**: Sentiment mapping across topic clusters and subtopics
-5. **Interactive Visual Analytics**: Human-interpretable exploration of AI-generated insights
-6. **Social Persona Analysis**: Demographic breakdown and persona identification within topics
+1. **Hierarchical Topic Clustering**: Preserves structure within complex narratives
+2. **Circle-Packing Visualization**: Represents topic hierarchies graphically
+3. **Live Data Processing**: Extracts and updates topics in real-time
+4. **Multi-level Sentiment Analysis**: Visualizes sentiment across different topic levels
+5. **Interactive Visual Analytics**: Allows human-centered exploration of AI-generated insights
+6. **Persona Analysis**: Breaks down audience data by demographics
 
 ## Live Demo
 
-**Experience the tool in action**: [https://henryfchapman.github.io/Plotline/](https://henryfchapman.github.io/Plotline/)
+Try the dashboard here: [https://henryfchapman.github.io/Plotline/](https://henryfchapman.github.io/Plotline/)
 
-The live demo showcases news-related discourse analysis, demonstrating how the tool reveals hidden narrative patterns and trend evolution.
+The demo uses news-related data to illustrate how Plotline maps evolving discussions.
 
-##  Technical Stack
+## Technical Stack
 
-- **Frontend**: HTML5, CSS3, JavaScript with D3.js for advanced visualizations
-- **Backend**: Python for data processing and API integration
-- **APIs**: 
-  - Infegy Starscape API for social conversation analysis
-  - Infegy Atlas API for custom dataset management
-- **Visualization**: Custom D3.js circle-packing algorithms
-- **Data Processing**: Real-time topic extraction and sentiment analysis
-- **Styling**: Google Fonts (Roboto, Inter) for modern typography
+* **Frontend**: HTML5, CSS3, JavaScript with D3.js
+* **Backend**: Python for API integration and data processing
+* **APIs**:
 
-## Sample Datasets
+  * Infegy Starscape (social conversation analysis)
+  * Infegy Atlas (custom dataset uploads)
+* **Visualization**: Custom D3.js circle-packing
+* **Data Handling**: Live extraction and sentiment mapping
+* **Typography**: Google Fonts (Roboto, Inter)
 
-The tool includes analysis of various social conversations:
-- **Technology and Innovation Conversations**: Tech industry trends and sentiment
-- **Social Media Commentary Analysis**: Platform-specific conversation patterns
-- **Literature and Book Reviews**: Goodreads data analysis
-- **YouTube Content Analysis**: MKBHD comments and engagement patterns
+## Example Datasets
+
+Included datasets highlight different domains:
+
+* **Technology Conversations**: Social discussion on tech trends
+* **Social Media Analysis**: Platform-specific conversation patterns
+* **Literature Commentary**: Goodreads reviews and reactions
+* **YouTube Comments**: Viewer sentiment and engagement (e.g., MKBHD)
 
 ## Installation & Setup
 
-### Prerequisites
-- Python 3.x
-- Web browser with JavaScript enabled
-- Infegy API credentials (Starscape and Atlas)
+### Requirements
+
+* Python 3.x
+* JavaScript-enabled browser
+* Infegy API credentials
 
 ### Quick Start
 
 1. **Clone the repository**:
-```bash
-git clone https://github.com/henryfchapman/Plotline.git
-cd Plotline
-```
 
-2. **Install Python dependencies**:
-```bash
-pip install requests
-```
+   ```bash
+   git clone https://github.com/henryfchapman/Plotline.git
+   cd Plotline
+   ```
 
-3. **Set up API credentials**:
-   - Create `infegy_starscape_bearer_token.txt` in the root directory
-   - Create `infegy_atlas_api_key.txt` in the root directory
-   - Add your respective Infegy API keys to these files
+2. **Install dependencies**:
 
-4. **Run data collection**:
-```bash
-python get_data.py
-```
+   ```bash
+   pip install requests
+   ```
+
+3. **Add API keys**:
+
+   * Create `infegy_starscape_bearer_token.txt` and `infegy_atlas_api_key.txt`
+   * Paste your respective API keys into these files
+
+4. **Run data pipeline**:
+
+   ```bash
+   python get_data.py
+   ```
 
 5. **Open the dashboard**:
-   - Open `index.html` in your browser to explore the dashboard
-   - Or serve it locally using a web server
 
-### Advanced Setup
+   * Open `index.html` in a browser
+   * Or serve locally via a simple web server
 
-#### Custom Dataset Integration
+### Custom Dataset Integration
 
-To analyze your own data:
+1. **Prepare CSVs**:
 
-1. **Prepare your data**:
-   - Place CSV files in a `csvs/` directory
-   - Ensure columns match the expected format (Video_Title, Video_Date, Video_URL, Comment_Timestamp, Comment_Author, Comment_Text)
+   * Add files to the `csvs/` folder
+   * Columns should include: `Video_Title`, `Video_Date`, `Video_URL`, `Comment_Timestamp`, `Comment_Author`, `Comment_Text`
 
-2. **Upload to Infegy Atlas**:
-```python
-from pushing_dataset_to_infegy_api import push_data
-push_data("Your Dataset Name")
-```
+2. **Upload to Infegy**:
 
-3. **Update dataset configuration**:
-   - Modify `get_data.py` to use your dataset ID
-   - Run the analysis pipeline
+   ```python
+   from pushing_dataset_to_infegy_api import push_data
+   push_data("Your Dataset Name")
+   ```
 
-#### Configuration Options
+3. **Configure dataset**:
 
-- **API Timeouts**: Adjust `TIMEOUT` and `WAIT_TIME` in `get_data.py`
-- **Narrative Count**: Modify `NUM_NARRATIVES` for different analysis depths
-- **Data Filtering**: Customize query filters in the API requests
+   * Update `get_data.py` with your dataset ID
+
+### Configuration
+
+* **Timeouts**: Adjust `TIMEOUT` and `WAIT_TIME` in `get_data.py`
+* **Narrative Count**: Change `NUM_NARRATIVES` for more or fewer results
+* **Filtering**: Customize filters in API queries
 
 ## 📁 Project Structure
 
 ```
 Plotline/
-├── index.html                           # Main dashboard interface
-├── get_data.py                          # Data collection and processing
-├── pushing_dataset_to_infegy_api.py     # Infegy Atlas API integration
-├── plotline_data/                       # Processed analysis datasets
+├── index.html
+├── get_data.py
+├── pushing_dataset_to_infegy_api.py
+├── plotline_data/
 │   ├── Goodreads Data.json
 │   ├── MKBHD Comments.json
 │   ├── News Summary.json
 │   ├── Sample Comments.json
 │   └── The Lord of the Rings.json
-├── data_manifest.json                   # Dataset metadata and configuration
-├── infegy_starscape_bearer_token.txt    # Starscape API credentials
-├── infegy_atlas_api_key.txt             # Atlas API credentials
-├── .gitignore                           # Git ignore patterns
-└── README.md                            # This file
+├── data_manifest.json
+├── infegy_starscape_bearer_token.txt
+├── infegy_atlas_api_key.txt
+├── .gitignore
+└── README.md
 ```
 
-## 🔍 Core Components
+## 🔍 Component Overview
 
-### Data Processing Pipeline (`get_data.py`)
+### Data Pipeline (`get_data.py`)
 
-- **Async API Handling**: Manages Infegy Starscape API's asynchronous processing
-- **Nested Narrative Analysis**: Extracts hierarchical topic relationships
-- **Persona Analysis**: Identifies demographic patterns within topics
-- **Error Handling**: Robust error management for API failures
-- **Data Enrichment**: Combines multiple analysis types into unified datasets
+* Handles asynchronous API responses
+* Extracts and organizes topic hierarchies
+* Performs demographic and sentiment analysis
+* Manages errors and data merging
 
-### Visualization Engine (`index.html`)
+### Visualization (`index.html`)
 
-- **D3.js Circle Packing**: Hierarchical topic visualization
-- **Interactive Navigation**: Click-to-drill-down functionality
-- **Sentiment Color Coding**: Visual sentiment indicators
-- **Responsive Design**: Mobile-friendly interface
-- **Real-time Updates**: Dynamic data loading and display
+* Uses D3.js for circle-packing
+* Enables click-based drill-down
+* Sentiment is color-coded
+* Layout is responsive for different screens
 
-### API Integration (`pushing_dataset_to_infegy_api.py`)
+### API Uploader (`pushing_dataset_to_infegy_api.py`)
 
-- **Custom Dataset Management**: Upload and manage custom data
-- **CSV to JSON Conversion**: Data format standardization
-- **Field Mapping**: Automatic column type detection
-- **Batch Processing**: Handle multiple data files
+* Uploads and manages custom datasets
+* Converts CSVs to JSON
+* Supports field mapping and batch processing
 
-## Research Applications
+## Use Cases
 
-This experimental methodology is particularly valuable for:
+Plotline may be useful in areas like:
 
-- **Market Research**: Understanding consumer sentiment evolution
-- **Social Media Analysis**: Tracking narrative development across platforms
-- **Trend Forecasting**: Identifying emerging topics before they become mainstream
-- **Brand Monitoring**: Analyzing conversation hierarchies around brands
-- **Policy Research**: Understanding public discourse on social issues
-- **Content Strategy**: Optimizing content based on audience personas
-- **Competitive Intelligence**: Monitoring competitor-related conversations
+* **Market Research**: Consumer sentiment and trend analysis
+* **Social Media Monitoring**: Mapping narrative change over time
+* **Trend Forecasting**: Identifying emerging topics
+* **Brand Analysis**: Visualizing brand-related conversations
+* **Policy Research**: Exploring public discourse on key issues
+* **Content Strategy**: Analyzing audience feedback
+* **Competitive Monitoring**: Observing competitor conversations
 
-## 🔬 Experimental Nature
+## Experimental Status
 
-This project represents experimental research in:
+Plotline is part of an exploratory research effort involving:
 
-- **AI-Assisted Visual Analytics**: Making complex AI outputs human-interpretable
-- **Nested Topic Modeling**: Preserving context in hierarchical analysis
-- **Real-time Social Analysis**: Processing live conversation data
-- **Interactive Data Exploration**: Natural navigation of complex datasets
-- **Multi-modal Data Integration**: Combining text, sentiment, and demographic data
+* **AI-Assisted Visualization**: Translating complex data into interpretable visuals
+* **Layered Topic Modeling**: Preserving relationships in hierarchical data
+* **Live Data Analysis**: Working with up-to-date conversation streams
+* **User-Driven Exploration**: Designing for interactivity and clarity
+* **Integrated Data Types**: Merging sentiment, text, and demographic information
 
-## Impact & Innovation
+## Technical Highlights
 
-- **Novel Visualization Approach**: First implementation of nested circle-packing for topic analysis
-- **Context Preservation**: Maintains narrative relationships often lost in traditional analysis
-- **Human-AI Collaboration**: Combines AI processing power with human interpretability
-- **Real-time Capabilities**: Processes live social data for immediate insights
-- **Scalable Architecture**: Handles multiple datasets and analysis types
+* **Visual Design**: First use of nested circle-packing in this context
+* **Narrative Context Preservation**: Retains structure in evolving discussions
+* **Human-AI Interface**: Supports interpretability of model output
+* **Scalability**: Built to handle a variety of dataset types and sizes
 
-## Important Notes
+## Notes
 
 ### API Requirements
-- **Infegy Starscape API**: Required for narrative analysis and topic extraction
-- **Infegy Atlas API**: Required for custom dataset management
-- **Rate Limiting**: Be aware of API rate limits and implement appropriate delays
 
-### Data Privacy
-- API keys are stored locally and not tracked in version control
-- Sensitive data should be handled according to your organization's policies
-- Consider data retention policies for processed datasets
+* Infegy Starscape: Narrative modeling
+* Infegy Atlas: Custom datasets
+* Respect rate limits; built-in delays may be needed
 
-### Performance Considerations
-- Large datasets may require significant processing time
-- Browser memory usage increases with dataset size
-- Consider implementing pagination for very large datasets
+### Data Handling
 
-## Contributing
-
-This is experimental research software. Contributions are welcome in the form of:
-
-- **Methodology improvements**: Enhanced topic modeling algorithms
-- **Visualization enhancements**: New chart types and interaction patterns
-- **API integration extensions**: Support for additional data sources
-- **Documentation improvements**: Better setup guides and tutorials
-- **Performance optimizations**: Faster data processing and rendering
-- **Bug fixes**: Issue resolution and error handling improvements
-
-### Development Guidelines
-
-1. **Fork the repository** and create a feature branch
-2. **Test thoroughly** with different dataset types
-3. **Document changes** in code comments and README updates
-4. **Follow existing code style** and structure
-5. **Submit pull requests** with clear descriptions
+* API keys are stored locally and not included in Git
+* Handle sensitive data per organizational policies
+* Datasets can grow large—manage storage accordingly
 
 ## Acknowledgments
 
-- [D3.js](https://d3js.org/) for advanced visualization capabilities
-- [Infegy](https://www.infegy.com/) for the Starscape and Atlas APIs
-- [Roboto](https://fonts.google.com/specimen/Roboto) and [Inter](https://fonts.google.com/specimen/Inter) fonts for typography
-- The research community for feedback and validation
+* [D3.js](https://d3js.org/) for visualization
+* [Infegy](https://www.infegy.com/) for APIs
+* [Roboto](https://fonts.google.com/specimen/Roboto) and [Inter](https://fonts.google.com/specimen/Inter) for fonts
