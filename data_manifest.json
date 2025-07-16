@@ -4,6 +4,10 @@
         "label": "Goodreads Data"
     },
     {
+        "file": "plotline_data/Sample Comments.json",
+        "label": "Sample Comments"
+    },
+    {
         "file": "plotline_data/The Lord of the Rings.json",
         "label": "The Lord of the Rings"
     },
