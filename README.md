@@ -1,7 +1,3 @@
-Here’s a revised version of your README that tones down the hyperbole while maintaining clarity, professionalism, and enthusiasm. The language is more measured and neutral, suitable for a research-oriented or technical audience:
-
----
-
 # Plotline: AI-Powered Narrative Analysis Dashboard
 
 A web-based dashboard for analyzing and visualizing social narratives using AI-assisted hierarchical topic modeling. This tool is designed to support researchers in identifying and exploring patterns in social conversation data through structured visualizations and interactive analysis.
