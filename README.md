@@ -4,13 +4,13 @@
 
 A cutting-edge web-based dashboard for analyzing and visualizing complex social narratives using AI-driven nested topic analysis. This experimental tool transforms how researchers understand trend evolution by revealing the hidden architecture of social conversations through hierarchical topic modeling and interactive visualizations.
 
-## 🎯 Research Focus
+## Research Focus
 
 **AI-Based Trend Identification and Explanation Through Nested Advanced Topic Analysis**
 
 This project explores how hierarchical topic modeling and interactive visualization can reveal patterns in social discourse that traditional linear analysis methods miss. By employing nested circle-packing algorithms and real-time sentiment analysis, Plotline enables researchers to explore social conversations at multiple levels simultaneously.
 
-## ✨ Key Features
+## Key Features
 
 - **Nested Topic Visualization**: Interactive circle-packing diagrams showing hierarchical topic relationships
 - **Real-time Sentiment Analysis**: Dynamic sentiment mapping across topic clusters
@@ -21,7 +21,7 @@ This project explores how hierarchical topic modeling and interactive visualizat
 - **Multi-Dataset Support**: Analysis of various social conversation datasets
 - **Real-time Data Processing**: Live topic extraction and sentiment analysis
 
-## 🔬 Experimental Methodology
+## Experimental Methodology
 
 This research combines several innovative techniques:
 
@@ -32,13 +32,13 @@ This research combines several innovative techniques:
 5. **Interactive Visual Analytics**: Human-interpretable exploration of AI-generated insights
 6. **Social Persona Analysis**: Demographic breakdown and persona identification within topics
 
-## 🚀 Live Demo
+## Live Demo
 
 **Experience the tool in action**: [https://henryfchapman.github.io/Plotline/](https://henryfchapman.github.io/Plotline/)
 
 The live demo showcases Tesla-related discourse analysis, demonstrating how the tool reveals hidden narrative patterns and trend evolution.
 
-## 🛠️ Technical Stack
+##  Technical Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript with D3.js for advanced visualizations
 - **Backend**: Python for data processing and API integration
@@ -49,7 +49,7 @@ The live demo showcases Tesla-related discourse analysis, demonstrating how the 
 - **Data Processing**: Real-time topic extraction and sentiment analysis
 - **Styling**: Google Fonts (Roboto, Inter) for modern typography
 
-## 📊 Sample Datasets
+## Sample Datasets
 
 The tool includes analysis of various social conversations:
 - **Tesla and Electric Vehicle Discourse**: Automotive industry conversations
@@ -59,7 +59,7 @@ The tool includes analysis of various social conversations:
 - **Literature and Book Reviews**: Goodreads data analysis
 - **YouTube Content Analysis**: MKBHD comments and engagement patterns
 
-## 🔧 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Python 3.x
@@ -164,7 +164,7 @@ Plotline/
 - **Field Mapping**: Automatic column type detection
 - **Batch Processing**: Handle multiple data files
 
-## 🎓 Research Applications
+## Research Applications
 
 This experimental methodology is particularly valuable for:
 
@@ -186,7 +186,7 @@ This project represents experimental research in:
 - **Interactive Data Exploration**: Natural navigation of complex datasets
 - **Multi-modal Data Integration**: Combining text, sentiment, and demographic data
 
-## 📈 Impact & Innovation
+## Impact & Innovation
 
 - **Novel Visualization Approach**: First implementation of nested circle-packing for topic analysis
 - **Context Preservation**: Maintains narrative relationships often lost in traditional analysis
@@ -194,7 +194,7 @@ This project represents experimental research in:
 - **Real-time Capabilities**: Processes live social data for immediate insights
 - **Scalable Architecture**: Handles multiple datasets and analysis types
 
-## 🚨 Important Notes
+## Important Notes
 
 ### API Requirements
 - **Infegy Starscape API**: Required for narrative analysis and topic extraction
@@ -211,7 +211,7 @@ This project represents experimental research in:
 - Browser memory usage increases with dataset size
 - Consider implementing pagination for very large datasets
 
-## 🤝 Contributing
+## Contributing
 
 This is experimental research software. Contributions are welcome in the form of:
 
@@ -230,35 +230,9 @@ This is experimental research software. Contributions are welcome in the form of
 4. **Follow existing code style** and structure
 5. **Submit pull requests** with clear descriptions
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [D3.js](https://d3js.org/) for advanced visualization capabilities
 - [Infegy](https://www.infegy.com/) for the Starscape and Atlas APIs
 - [Roboto](https://fonts.google.com/specimen/Roboto) and [Inter](https://fonts.google.com/specimen/Inter) fonts for typography
 - The research community for feedback and validation
-
-## 📞 Support
-
-For questions about this experimental research:
-
-- **Open an issue** in the GitHub repository
-- **Check the documentation** for common setup issues
-- **Review the code comments** for implementation details
-
-## 🔮 Future Development
-
-Planned enhancements include:
-
-- **Real-time Streaming**: Live data processing and visualization
-- **Advanced Analytics**: Machine learning-based trend prediction
-- **Multi-language Support**: Analysis of non-English conversations
-- **Export Capabilities**: PDF reports and data export options
-- **Collaborative Features**: Multi-user analysis and sharing
-
----
-
-**Research Context**: This project was developed for presentation at ESOMAR, focusing on innovative approaches to trend identification and explanation through AI-powered nested topic analysis. The methodology represents a significant advancement in social media analytics and narrative research. 
