@@ -2030,7 +2030,7 @@
                     !narrative.personas ||
                     !Array.isArray(narrative.personas) ||
                     narrative.personas.length === 0 ||
-                    narrative.personas.every(p => p.title === "Error fetching personas")
+                    narrative.personas.every(p => p.title === "Error")
                 ) {
                     return null; // Don't return a section if data is missing or invalid
                 }

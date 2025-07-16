@@ -1,19 +1,15 @@
 [
     {
+        "file": "plotline_data/Sample Dataset.json",
+        "label": "Sample Dataset"
+    },
+    {
         "file": "plotline_data/Goodreads Data.json",
         "label": "Goodreads Data"
     },
     {
-        "file": "plotline_data/Sample Comments.json",
-        "label": "Sample Comments"
-    },
-    {
         "file": "plotline_data/The Lord of the Rings.json",
         "label": "The Lord of the Rings"
-    },
-    {
-        "file": "plotline_data/MKBHD Comments.json",
-        "label": "MKBHD Comments"
     },
     {
         "file": "plotline_data/News Summary.json",
