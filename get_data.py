@@ -1,5 +1,6 @@
 import time, json, requests, urllib.parse, os
 from pushing_dataset_to_infegy_api import push_data
+from simulate_run import simulate_run
 
 BASE_URL = "https://starscape.infegy.com/api"
 DATA_DIR = "plotline_data"
@@ -138,6 +139,11 @@ if __name__ == "__main__":
     import argparse
     p = argparse.ArgumentParser()
     p.add_argument("--dataset_id", type=str)
+    p.add_argument("--simulate_run", type=str)
     p.add_argument("--dataset_name", required=True)
     args = p.parse_args()
-    run(args.dataset_id, args.dataset_name)
+
+    if args.simulate_run.lower() == "yes":
+        simulate_run(args.dataset_id, args.dataset_name)
+    else:
+        run(args.dataset_id, args.dataset_name)
