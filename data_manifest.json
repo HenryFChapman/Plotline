@@ -4,12 +4,12 @@
         "label": "Goodreads Data"
     },
     {
-        "file": "plotline_data/Test Data.json",
-        "label": "Test Data"
-    },
-    {
         "file": "plotline_data/The Lord of the Rings.json",
         "label": "The Lord of the Rings"
+    },
+    {
+        "file": "plotline_data/Sample Data.json",
+        "label": "Sample Data"
     },
     {
         "file": "plotline_data/News Summary.json",

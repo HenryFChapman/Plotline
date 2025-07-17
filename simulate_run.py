@@ -31,7 +31,7 @@ def get_nested_narratives():
 
 def move_file(name):
 	# Define paths
-	source_file = 'Sample Dataset.json'
+	source_file = 'Sample_Output.json'
 	new_filename = f'{name}.json'
 	target_folder = 'plotline_data'
 

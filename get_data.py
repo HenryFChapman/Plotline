@@ -117,44 +117,15 @@ def run(dataset_id, name, upload_data):
     token, summary_meta = post_request("/query/ai-summary-structured/", {
         "dataset_id": dataset_id,
         "query": {
-  "op": "and",
-  "values": [
-    {
-      "op": "contains",
-      "fields": [
-        "title",
-        "description",
-        "body"
-      ],
-      "values": [
-        "server"
-      ],
-      "labels": [
-        "server"
-      ]
-    },
-    {
-      "op": "contains",
-      "fields": [
-        "title",
-        "description",
-        "body"
-      ],
-      "values": [
-        "monitoring"
-      ],
-      "labels": [
-        "monitoring"
-      ]
-    },
-    {
-      "op": "range",
-      "field": "published",
-      "lower": "-P3Y",
-      "upper": "now"
-    }
-  ]
-}
+            "op": "and",
+            "values": [
+                {
+                    "op": "contains",
+                    "field": "language",
+                    "value": "en"
+                }
+            ]
+        }
     })
 
     result = poll_token(token)
