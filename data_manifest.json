@@ -1,11 +1,11 @@
 [
     {
-        "file": "plotline_data/Sample Dataset.json",
-        "label": "Sample Dataset"
-    },
-    {
         "file": "plotline_data/Goodreads Data.json",
         "label": "Goodreads Data"
+    },
+    {
+        "file": "plotline_data/Test Data.json",
+        "label": "Test Data"
     },
     {
         "file": "plotline_data/The Lord of the Rings.json",

@@ -7,10 +7,11 @@ config.ini
 secrets.json
 *.txt
 *.csv
+*.pdf
 
 Sample_Initial_Output.json
 Sample_Output.json
-
+"Sample Output.json"
 
 # macOS system files
 .DS_Store

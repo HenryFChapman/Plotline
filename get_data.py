@@ -4,7 +4,7 @@ from simulate_run import simulate
 
 BASE_URL = "https://starscape.infegy.com/api"
 DATA_DIR = "plotline_data"
-TIMEOUT, WAIT_TIME, NUM_NARRATIVES = 60, 10, 3
+TIMEOUT, WAIT_TIME, NUM_NARRATIVES = 60, 10, 4
 
 # Read API key
 with open('infegy_starscape_bearer_token.txt') as f:
@@ -105,20 +105,56 @@ def generate_manifest():
     with open("data_manifest.json", "w") as f:
         json.dump(manifest, f, indent=4)
 
-def run(dataset_id, name):
-    print("Uploading...")
-    push_data(name)
-    dataset_id = dataset_id or get_dataset_id()
-    print(dataset_id)
+def run(dataset_id, name, upload_data):
+
+    if upload_data.lower() == "yes":
+        print("Uploading...")
+        push_data(name)
+        dataset_id = dataset_id or get_dataset_id()
+        print(dataset_id)
 
     # Step 1: Main summary
     token, summary_meta = post_request("/query/ai-summary-structured/", {
         "dataset_id": dataset_id,
         "query": {
-            "op": "and",
-            "values": [
-                {"op": "contains", "field": "language", "value": "en"}            ]
-        }
+  "op": "and",
+  "values": [
+    {
+      "op": "contains",
+      "fields": [
+        "title",
+        "description",
+        "body"
+      ],
+      "values": [
+        "server"
+      ],
+      "labels": [
+        "server"
+      ]
+    },
+    {
+      "op": "contains",
+      "fields": [
+        "title",
+        "description",
+        "body"
+      ],
+      "values": [
+        "monitoring"
+      ],
+      "labels": [
+        "monitoring"
+      ]
+    },
+    {
+      "op": "range",
+      "field": "published",
+      "lower": "-P3Y",
+      "upper": "now"
+    }
+  ]
+}
     })
 
     result = poll_token(token)
@@ -141,10 +177,11 @@ if __name__ == "__main__":
     p.add_argument("--dataset_id", type=str)
     p.add_argument("--simulate", type=str, required=True)
     p.add_argument("--dataset_name", required=True)
+    p.add_argument("--upload_data", type=str, required=True)
     args = p.parse_args()
 
-    if args.simulate_run.lower() == "yes":
-        simulate(args.dataset_id, args.dataset_name)
+    if args.simulate.lower() == "yes":
+        simulate(args.dataset_id, args.dataset_name, args.upload_data)
         generate_manifest()
     else:
-        run(args.dataset_id, args.dataset_name)
+        run(args.dataset_id, args.dataset_name, args.upload_data)
